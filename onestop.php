@@ -147,6 +147,20 @@
 
     add_shortcode( 'onestop-forms', 'onestop_forms_shortcode' );
 
+    function onestop_reate_post_type() {
+        register_post_type( 'quote',
+          array(
+            'labels' => array(
+              'name' => __( 'Quotes' ),
+              'singular_name' => __( 'Quote' )
+            ),
+            'public' => true,
+            'has_archive' => false,
+          )
+        );
+      }
+      add_action( 'init', 'onestop_create_post_type' );
+
     function onestop_quotes_shortcode() {
         ?>
         <style>
